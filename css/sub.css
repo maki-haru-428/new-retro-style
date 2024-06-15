@@ -1,0 +1,339 @@
+@charset "utf-8";
+/* 下層ページ用css */
+
+/* ブラウザスタイルの初期化 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 基本の指定 */
+html {
+  max-width: 100%;
+  font-size: 62.5%; /* 基本文字サイズ10pxに変更 */
+}
+
+body {
+  background-color: #cbdbf2;
+  background-image: url(../images/background.png); /* 青のストライプ背景 */
+  background-repeat: repeat; /* 背景リピート */
+}
+
+p {
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: "Kosugi Maru", sans-serif;
+  line-height: 1.75;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* 基本の指定終わり */
+
+/* 「トップにもどる」ボタンの指定終わり */
+.button_box {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.button_all {
+  margin: 0 auto 10rem auto;
+  width: auto;
+  height: 8rem;
+  background-color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Kosugi Maru", sans-serif;
+  border: 0.5rem solid #64f5c0;
+  border-radius: 5rem;
+
+  /* アニメーション指定 */
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+}
+
+.button_all:hover {
+  background-color: #64f5c0;
+  border: 0.5rem solid #64f5c0;
+}
+
+.button_all a {
+  padding: 4rem;
+  color: #13835a;
+}
+
+.button_all a:visited {
+  color: #13835a;
+}
+/* 「トップにもどる」ボタンの指定終わり */
+
+/* ヘッダー（ナビ）部分の指定 */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  width: 100%; /* ヘッダー横幅（画面の100%） */
+  margin: 0 auto; /* ヘッダーの画面中央揃え */
+}
+
+.header_nav {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header_nav .nav_item {
+  display: flex;
+  margin: 0; /* ナビ項目間のマージン */
+  width: 12rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #8543ff;
+  box-shadow: 1rem 0 #64f5c0, 1rem 0.5rem 6px #5a848c;
+  border-radius: 0 0 10rem 10rem;
+
+  /* アニメーション指定 */
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0;
+}
+
+.header_nav .nav_item:hover {
+  background-color: #64f5c0;
+}
+
+.header_nav .nav_item a {
+  padding: 2rem;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.header_nav a:visited {
+  color: #fff;
+}
+/* ヘッダー（ナビ）部分の指定終わり */
+
+/* article共通部分 */
+article {
+  width: 80%; /* 横幅（画面の80%） */
+  margin: 15rem auto;
+  padding: 2rem;
+  background-color: #ff439b;
+  border-radius: 2rem;
+  box-shadow: 2rem 1rem #64f5c0;
+}
+
+article h1 {
+  margin-top: -5rem; /* 上部マージン */
+  margin-bottom: 2rem; /* 下部マージン */
+  color: #fff;
+  font-size: 6rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center; /* 文章中央揃え */
+  text-shadow: 0.1rem 0.1rem 0 #9f0241, -0.1rem -0.1rem 0 #9f0241, -0.1rem 0.1rem 0 #9f0241, 0.1rem -0.1rem 0 #9f0241, 0.1rem 0 0 #9f0241, -0.1rem 0 0 #9f0241, 0 0.1rem 0 #9f0241, 0 -0.1rem 0 #9f0241, 0.6rem 0 #9f0241;
+}
+/* article共通部分終わり */
+
+/* 浮き上がるアニメーション指定 */
+.fadeup {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 浮き上がるアニメーション指定終わり */
+
+/* MUSICページ */
+.music .nav_item_music {
+  /* 現在地ナビ部分色変え */
+  background-color: #cc00ff;
+}
+
+.music img {
+  display: inline-block;
+  width: 40rem;
+  border-radius: 2rem;
+}
+
+.music_exp {
+  display: inline-block;
+  height: 40rem;
+  padding-left: 2rem;
+  vertical-align: top;
+}
+
+.music h2 {
+  padding: 1rem 0;
+  color: #fff;
+  font-size: 3rem;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.1rem;
+  border-bottom: dotted 0.5rem #ff8ac1;
+}
+
+.music p {
+  padding: 1rem 0;
+}
+
+.music blockquote {
+  margin: 5rem 0;
+  color: #fff;
+  text-shadow: 0.5rem 0.1rem #8543ff;
+  font-size: 3.6rem;
+  font-family: "Kosugi Maru", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.2rem;
+  line-height: 1.25;
+}
+/* MUSICページ終わり */
+
+/* COSTUMEページ */
+.costume .nav_item_costume {
+  /* 現在地ナビ部分色変え */
+  background-color: #cc00ff;
+}
+
+.costume img {
+  display: inline-block;
+  width: 30rem;
+  border-radius: 2rem;
+}
+
+.costume_exp {
+  display: inline-block;
+  height: 30rem;
+  padding-left: 2rem;
+  vertical-align: top;
+}
+
+.costume h2 {
+  padding: 1rem 0;
+  color: #fff;
+  font-size: 3rem;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.1rem;
+  border-bottom: dotted 0.5rem #ff8ac1;
+}
+
+.costume p {
+  padding: 1rem 0;
+}
+
+.costume_exp_p {
+  margin-top: 3rem;
+  font-size: 2.4rem;
+}
+/* COSTUMEページ終わり */
+
+/* ページ内のリンクボタン用 */
+.music_link img {
+  width: 32px;
+  border-radius: 0;
+}
+/* ページ内のリンクボタン用終わり */
+
+/* GOODSページ */
+.goods .nav_item_goods {
+  /* 現在地ナビ部分色変え */
+  background-color: #cc00ff;
+}
+
+.goods {
+  text-align: center;
+}
+
+.goods_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.goods_item {
+  margin: 5rem;
+  text-align: center;
+}
+
+.goods_item img {
+  width: 30rem;
+  border-radius: 2rem;
+}
+/* GOODSページ終わり */
+
+/* フッター部分 */
+footer {
+  width: 100%;
+  background-color: #ff439b;
+  text-align: center; /* フッター内中央揃え */
+}
+
+.sns {
+  display: flex;
+  width: 100%;
+  padding-top: 5rem; /* 上部のパディング */
+  justify-content: center;
+  align-items: center;
+}
+
+.sns a {
+  display: flex;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.sns img {
+  height: 32px; /* SNSアイコン縦幅 */
+}
+
+small {
+  display: block;
+  padding: 5rem 0;
+  color: #fff;
+  font-size: 1.6rem;
+}
+/* フッター部分終わり */
